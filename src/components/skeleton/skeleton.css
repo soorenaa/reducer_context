@@ -1,0 +1,34 @@
+.skeleton-card{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+    width: 30%;
+    border-radius: 5px;
+    margin: 20px 0 20px 0;
+    height: auto;
+    padding: 5px;
+    /* animation: scale 4s infinite; */
+
+}
+
+.skeleton-image{
+    border-radius: 5px 5px 0 0;
+    height: 250px;
+    object-fit: cover;
+}
+
+.skeleton-author {
+    padding: 2px 16px;
+    margin-top: 25px;
+    line-height: 2;
+}
+
+
+@keyframes scale {
+    0% {
+        transform: scale(0.9)
+    }
+
+    100% {
+        transform: scale(1)
+    }
+}
