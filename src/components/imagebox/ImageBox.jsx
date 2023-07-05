@@ -6,23 +6,23 @@ import { AppContext } from "../../contexts/imageListContext";
 
 const ImageBox = ({ currentPostsPagination }) => {
 
-  const { currentPosts } = useContext(AppContext)
+  const { state } = useContext(AppContext)
 
-  console.log("_______________",currentPostsPagination);
+  console.log("_______________", currentPostsPagination);
 
   return (
     <div id="card_box">
 
       {
         currentPostsPagination
-        ? 
-        currentPostsPagination?.map((result, index) => (
-          <Card key={index} data={result} />
-        ))
-        :
-        currentPosts.map((result, index) => (
-          <Card key={index} data={result} />
-        ))
+          ?
+          currentPostsPagination?.map((result, index) => (
+            <Card key={index} data={result} />
+          ))
+          :
+          state.filteredContacts.map((result, index) => (
+            <Card key={index} data={result} />
+          ))
       }
     </div>
   );

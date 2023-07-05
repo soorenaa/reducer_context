@@ -8,16 +8,16 @@ import { AppContext } from "../../contexts/imageListContext";
 
 const Pagination = ({ postPerPage }) => {
 
-  const {post}=useContext(AppContext)
+  const {state}=useContext(AppContext)
 
 
   const [itemOffset, setItemOffset] = useState(0);
 
   const endOffset = itemOffset + postPerPage;
 
-  const currentPosts = post.slice(itemOffset, endOffset);
+  const currentPosts = state.post.slice(itemOffset, endOffset);
 
-  const pageCount = Math.ceil(post.length / postPerPage);
+  const pageCount = Math.ceil(state.post.length / postPerPage);
 
   const handlePageClick = (e) => {
     const newOffset = e.selected * postPerPage;
