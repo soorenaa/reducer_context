@@ -14,6 +14,6 @@ export const router = createBrowserRouter([
     },
     {
         path: "/singlepost/:id",
-        element: <SinglePost />
+        element: <SinglePost  pageTitle={"نمایش  پست"}/>
     }
 ]);

@@ -3,9 +3,13 @@ import Card from "../imagebox/Card";
 import { useEffect, useState } from "react";
 import { getSinglePost } from "../../api/services";
 import Skeleton from "../skeleton/Skeleton";
+import { Helmet, HelmetProvider } from "react-helmet-async";
 
 
-const SinglePost = () => {
+const SinglePost = ({ pageTitle }) => {
+
+
+
     const [dataSinglePost, setDataSinglePost] = useState({});
     const [loading, setLoading] = useState(true)
     const param = useParams();
@@ -27,10 +31,17 @@ const SinglePost = () => {
     console.log(dataSinglePost);
     return (
         <>
+
+            <HelmetProvider >
+                <Helmet>
+                    <title>{pageTitle}</title>
+                </Helmet>
+            </HelmetProvider>
+
             {loading ? <Skeleton /> : (
                 <Card data={dataSinglePost} />
             )}
-<Skeleton />
+            <Skeleton />
         </>
     )
 
